@@ -1,0 +1,12 @@
+{
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "github.copilot.enable": false,
+        "github.copilot.chat.enable": false
+      },
+      "extensions": []
+    }
+  },
+  "postCreateCommand": "code --uninstall-extension GitHub.copilot || true && code --uninstall-extension GitHub.copilot-chat || true"
+}
