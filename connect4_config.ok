@@ -1,0 +1,12 @@
+{
+    "name": "Connect 4",
+    "src": [
+        "main.py"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "protocols": [
+        "unlock"
+    ]
+}
