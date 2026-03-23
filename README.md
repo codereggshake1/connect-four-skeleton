@@ -60,4 +60,5 @@ Some helper functions have been provided for you.
 
 # Sources
 - [connect-four-ai](https://github.com/benjaminrall/connect-four-ai), for inspiration on computer bot implemented here.
+- [perfect connect four ai](https://github.com/lhorrell99/connect-4-solver), for inspiration on how to implement a perfect connect four bot.
 - [okpy](https://okpy.github.io/documentation/), for the auto grader.
