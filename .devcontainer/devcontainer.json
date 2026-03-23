@@ -8,5 +8,5 @@
       "extensions": []
     }
   },
-  "postCreateCommand": "code --uninstall-extension GitHub.copilot || true && code --uninstall-extension GitHub.copilot-chat || true"
+  "postCreateCommand": "code --uninstall-extension GitHub.copilot || true && code --uninstall-extension GitHub.copilot-chat || true && pip install nicegui"
 }
