@@ -53,7 +53,60 @@ Check if this makes sense by running the command below in the terminal.
 python checker -q cells -u
 ```
 
+# Tidy, the Simple AI
+The AI makes choices using the `pick_move` function in the `game_ai.py` file. This function takes in the current board and player.
+
+Then, it returns the column as its move. By default, `pick_move` will return `0`, which is the leftmost column. The `pick_move` function can call other functions to create better strategies.
+
+For example, one simple "strategy" is to choose the first open column, starting from the left. We will name this bot "Tidy". Tidy works like this:
+
+1. For each column, check if it is open.
+2. If it is open, then return that column index as the move.
+3. If it is closed, move on.
+4. If Tidy reaches the end without finding an open column, return the last column that was checked.
+
+Test your understanding before writing any code by running:
+
+`python checker -q tidy -u`
+
+After unlocking, write your code in the function named tidy in the game_ai.py file. Then, test your code with:
+`python checker -q tidy`
+
+If you want the AI to use this strategy, call the `tidy()` function in the `pick_move()` function.
+
+# Randall, the Random AI
+Another strategy is to randomly choose an open column. We will call this strategy "Randall". Randall works like this:
+
+1. First, create a list of all moves.
+2. Choose a random move.
+3. While this random move is not open, remove it from the list of moves and choose a new random move.
+4. Finally, return the move.
+5. If there are no moves to make, return the last move selected.
+
+Check your answer by running:
+
+`python checker -q randall`
+
+Hints:
+1. To choose a random move from a list, import the `random` library and use the `random.choice()` function. 
+```python
+import random
+options = [5, 6, 7, 8]
+choice = random.choice(options)
+print(choice) # random element from options
+```
+
+2. We provided a function called `is_open()` that checks whether a column is open. It takes in a board and a column. 
+```python
+board = [[-1, -1, -1],
+         [-1, -1, -1],
+         [-1, -1, -1]]
+print(is_open(board, 0)) # True
+```
+
 # Writing your Own Connect 4 Bot
+Now it's your turn!
+
 Open up the `game_ai.py` file and fill out the `pick_move` function. This function will take in the current state of the board and the current player, and return the column index of the move that the bot wants to make.
 
 Some helper functions have been provided for you.
