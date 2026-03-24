@@ -250,4 +250,4 @@ game.update_ui()
 
 # Run the app only when executed directly
 if __name__ in {"__main__", "__mp_main__"}:
-    ui.run(title='Connect Four', favicon='🎮', port=8000)
+    ui.run(title='Connect Four', favicon='./assets/randall.png', port=8000)

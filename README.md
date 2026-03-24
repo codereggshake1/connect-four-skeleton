@@ -15,7 +15,7 @@ Similarly: when you move from left to right, column increases.
 
 For example, in a tic-tac-toe board, the top left has row index 0 and column index 0, or (0, 0). The cell all the way below that has position (2, 0).
 
-![tic-tac-toe grid](row-col-index.png)
+![tic-tac-toe grid](./assets/row-col-index.png)
 
 
 To represent a grid in Python, we will use a nested list, or a list inside a list.

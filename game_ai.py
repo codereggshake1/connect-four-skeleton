@@ -1,10 +1,47 @@
 import random
 
 ##############################
+# Tidy, the Simple AI
+def tidy(board: list[list[int]], player: int) -> int:
+    """
+    TODO: Fill out Tidy's strategy
+    1. For each column, check if it is open.
+    2. If it is open, then return that column as the move.
+    3. If it is closed, move on.
+    If Tidy reached the end without finding an open column, return the last column that was checked.
+    """
+    for move in range(len(board[0])):
+        if is_open(board, move):
+            return move
+    return move
+
+##############################
+# Randall, the Random AI
+def randall(board: list[list[int]], player: int) -> int:
+    """
+    TODO: Fill out Randall's strategy
+    1.First, create a list of all moves.
+    2. Choose a random move.
+    3. While this random move is not open, remove it from the list of moves and choose a new random move.
+    4. Finally, return the move.
+    If there are no moves to make, return the last move selected.
+    """
+    num_cols = len(board[0])
+    moves = list(range(num_cols))
+    move = random.choice(moves)
+    # print(f"choice {move} from {moves}")
+    while not is_open(board, move) and len(moves) > 0:
+        moves.remove(move)
+        move = random.choice(moves)
+        # print(f"choice {move} from {moves}")
+    return move
+
+##############################
 # TODO: Write a connect four game AI!
 # When you're ready, run `python main.py` to test your AI in the game.
 def pick_move(board: list[list[int]], player: int) -> int:
     """
+    TODO: Pick a better move than the left most column
     Pick the best move for the AI player based on the current board state.
     
     Args:
@@ -12,15 +49,14 @@ def pick_move(board: list[list[int]], player: int) -> int:
         player: The AI player's number (0 or 1).
         Returns: The column index (0-6) where the AI should place its token.
     """
-    # TODO: Choose a better move than the left most column
-    move = 0
-    return move
+    # Choose a better move than the left most column
+    return 0
 
 ##############################
 # Helper functions for AI logic (optional, but can be useful for more advanced strategies)
 def get_column(board: list[list[int]], col: int) -> list[int]:
     """
-    Get the entire column.
+    Get the entire column as a list, with the top row as the beginning of the list.
     
     Args:
         board: The current game board as a 2D list.
@@ -40,7 +76,7 @@ def get_row(board: list[list[int]], row: int) -> list[int]:
     """
     return board[row]
 
-def get_adjacent(board: list[list[int]], row: int, col: int, direction='left') -> int:
+def get_adjacent(board: list[list[int]], row: int, col: int, direction='left') -> int|None:
     """
     Get the adjacent cell value in the specified direction.
     
@@ -61,7 +97,7 @@ def get_adjacent(board: list[list[int]], row: int, col: int, direction='left') -
         return board[row + 1][col]
     return None
 
-def is_valid_move(board: list[list[int]], col: int) -> bool:
+def is_open(board: list[list[int]], col: int) -> bool:
     """
     Check if a move is valid (i.e., the column is not full).
     
