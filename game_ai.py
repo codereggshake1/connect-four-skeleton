@@ -10,10 +10,7 @@ def tidy(board: list[list[int]], player: int) -> int:
     3. If it is closed, move on.
     If Tidy reached the end without finding an open column, return the last column that was checked.
     """
-    for move in range(len(board[0])):
-        if is_open(board, move):
-            return move
-    return move
+    return 0
 
 ##############################
 # Randall, the Random AI
@@ -26,15 +23,7 @@ def randall(board: list[list[int]], player: int) -> int:
     4. Finally, return the move.
     If there are no moves to make, return the last move selected.
     """
-    num_cols = len(board[0])
-    moves = list(range(num_cols))
-    move = random.choice(moves)
-    # print(f"choice {move} from {moves}")
-    while not is_open(board, move) and len(moves) > 0:
-        moves.remove(move)
-        move = random.choice(moves)
-        # print(f"choice {move} from {moves}")
-    return move
+    return 0
 
 ##############################
 # TODO: Write a connect four game AI!
