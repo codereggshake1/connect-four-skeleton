@@ -1,4 +1,9 @@
 # Connect 4 AI Bot Skeleton
+To get started, download as a zip file. Then, install the requirements:
+```
+pip install -r requirements.txt
+```
+
 To run the game UI, run the command below in the terminal.
 ```
 python main.py
